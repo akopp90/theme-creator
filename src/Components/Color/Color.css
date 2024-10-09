@@ -24,6 +24,8 @@
   border: none;
   border-radius: 5px;
   cursor: pointer;
+
+  box-shadow: 2px 2px 5px #000000;
 }
 .color-card-button-cancel {
   margin: 5px;
@@ -32,7 +34,7 @@
   font-weight: bold;
   background-color: #cc0000;
   color: white;
-  border: none;
+  box-shadow: 2px 2px 5px #000000;
   border-radius: 5px;
   cursor: pointer;
 }
@@ -73,4 +75,13 @@
 
 .color-card-content h3 {
   display: inline;
+}
+.color-card-yup {
+  background-color: rgba(0, 125, 0, 0.43);
+}
+.color-card-nope {
+  background-color: rgba(204, 0, 0, 0.43);
+}
+.color-card-kinda {
+  background-color: rgba(128, 0.43);
 }
