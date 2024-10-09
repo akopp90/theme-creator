@@ -1,11 +1,31 @@
 import "./Color.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import ColorForm from "../ColorForm/ColorForm";
 import CopyButton from "../CopyButton/CopyButton";
 
 export default function Color({ color, onDeleteColor, onEditColor }) {
   const [confirmDelete, setConfirmDelete] = useState(false);
   const [editColor, setEditColor] = useState(false);
+  const [contrastData, setContrastData] = useState("");
+
+  useEffect(() => {
+    async function fetchContrast() {
+      //console.log(color.hex, color.contrastText);
+      const response = await fetch(
+        "https://www.aremycolorsaccessible.com/api/are-they",
+        {
+          mode: "cors",
+          method: "POST",
+          body: JSON.stringify({ colors: [color.hex, color.contrastText] }),
+        }
+      );
+      //console.log(response);
+      const data = await response.json();
+      //console.log(data.overall);
+      setContrastData(data.overall);
+    }
+    fetchContrast();
+  }, [color]);
 
   const handleDelete = (id) => {
     if (!confirmDelete) {
@@ -33,6 +53,9 @@ export default function Color({ color, onDeleteColor, onEditColor }) {
       </div>
       <h4>{color.role}</h4>
       <p>contrast: {color.contrastText}</p>
+      <p className={`color-card-${contrastData.toLowerCase()}`}>
+        Overall Contrast Score: {contrastData}
+      </p>
       <div className="color-card-buttons">
         {confirmDelete && (
           <>
