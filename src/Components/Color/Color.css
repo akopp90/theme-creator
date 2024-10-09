@@ -1,6 +1,7 @@
 .color-card {
   margin: 0px 10px;
   padding: 5px;
+  min-height: 30vh;
 }
 
 .color-card-headline {
@@ -11,16 +12,50 @@
 }
 
 .color-card-button {
-  display: inline;
-  padding: 2px 6px;
-  background: white;
-  color: black;
-  border: 1px solid black;
+  margin: 5px;
+  height: 50px;
+  font-size: 18px;
+  font-weight: bold;
+  background-color: #0077cc;
+  color: white;
+  border: none;
   border-radius: 5px;
   cursor: pointer;
+}
+.color-card-button-cancel {
   margin: 5px;
+  font-size: 18px;
+  height: 50px;
+  font-weight: bold;
+  background-color: #cc0000;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
 }
 .color-card-buttons {
   display: flex;
-  justify-content: flex-start;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  height: 100%;
+}
+
+.color-card-color {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+.color-card-highlight {
+  background-color: #ff0000;
+  border: 3px solid #ff0000;
+  box-shadow: 2px 2px 5px #000000;
+  color: #000;
+  font-weight: bold;
+  text-align: center;
+  border-radius: 5px;
+  padding: 5px;
+  margin-top: 10px;
 }
