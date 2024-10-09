@@ -9,3 +9,18 @@
   background: black;
   color: white;
 }
+
+.color-card-button {
+  display: inline;
+  padding: 2px 6px;
+  background: white;
+  color: black;
+  border: 1px solid black;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 5px;
+}
+.color-card-buttons {
+  display: flex;
+  justify-content: flex-start;
+}
