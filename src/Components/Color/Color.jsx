@@ -1,6 +1,7 @@
 import "./Color.css";
 import { useState } from "react";
 import ColorForm from "../ColorForm/ColorForm";
+import CopyButton from "../CopyButton/CopyButton";
 
 export default function Color({ color, onDeleteColor, onEditColor }) {
   const [confirmDelete, setConfirmDelete] = useState(false);
@@ -26,7 +27,10 @@ export default function Color({ color, onDeleteColor, onEditColor }) {
         color: color.contrastText,
       }}
     >
-      <h3 className="color-card-headline">{color.hex}</h3>
+      <h3 className="color-card-headline">
+        {color.hex}
+        <CopyButton color={color.hex} />
+      </h3>
       <h4>{color.role}</h4>
       <p>contrast: {color.contrastText}</p>
       <div className="color-card-buttons">
