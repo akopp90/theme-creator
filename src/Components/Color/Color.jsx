@@ -27,10 +27,10 @@ export default function Color({ color, onDeleteColor, onEditColor }) {
         color: color.contrastText,
       }}
     >
-      <h3 className="color-card-headline">
-        {color.hex}
+      <div className="color-card-content">
+        <h3 className="color-card-headline">{color.hex}</h3>
         <CopyButton color={color.hex} />
-      </h3>
+      </div>
       <h4>{color.role}</h4>
       <p>contrast: {color.contrastText}</p>
       <div className="color-card-buttons">

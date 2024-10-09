@@ -59,3 +59,15 @@
   padding: 5px;
   margin-top: 10px;
 }
+.color-card-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  height: 100%;
+  width: 100%;
+}
+
+.color-card-content h3 {
+  display: inline;
+}
