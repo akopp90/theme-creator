@@ -1,96 +1,68 @@
+/* General styles for color cards */
 .color-card {
   margin: 0;
+  padding: 5px;
+  min-height: 30vh; /* Set minimum height for color card */
+  width: calc(33.33% - 10px); /* Adjust width for a 3-column layout */
   border: solid 1px #cfcfcf;
   border-radius: 5px;
-  padding: 5px;
-  min-height: 30vh;
-  width: calc(100% / 3 - 10px);
   box-shadow: 1px 1px 5px #a2a2a2;
 }
 
+/* Header styles for color card */
 .color-card-headline {
   display: inline;
   padding: 2px 6px;
   background: black;
   color: white;
 }
+
+/* Contrast text style */
 .color-card-contrast {
-  font-weight: 600;
+  font-weight: 600; /* Bold for contrast text */
 }
 
-.button-cancel-edit {
-  position: relative;
-  z-index: 1;
-  width: 100px;
-  right: calc(100% / -2 + 50px);
-}
-.color-card-delete {
-  position: relative;
-  display: flex;
-  align-self: center;
-  justify-self: center;
-  flex-direction: row;
-}
-.color-card-edit {
-  position: relative;
-  display: flex;
-  bottom: 0px;
-  align-self: center;
-}
+/* Button group styles within the color card */
 .color-card-button-group {
   display: flex;
-  flex-direction: row;
   justify-content: flex-end;
   align-items: flex-end;
   width: 100%;
 }
+
+/* Button styles */
 .color-card-button {
   margin: 2px;
-
   font-weight: bold;
   color: rgb(0, 0, 0);
   border: none;
-
   cursor: pointer;
-
   box-shadow: 2px 2px 5px #00000049;
 }
+
+/* Specific button styles for cancel and confirm actions */
 .color-card-button-cancel {
-  margin: 5px;
-  font-size: 18px;
-  height: 50px;
-  font-weight: bold;
   background-color: #cc0000;
   color: white;
-  box-shadow: 2px 2px 5px #000000;
-  border-radius: 5px;
-  cursor: pointer;
-}
-.color-card-button-ok {
-  margin: 5px;
+  width: 100px;
   font-size: 18px;
   height: 50px;
-  font-weight: bold;
-  background-color: #52cc00;
-  color: white;
-  box-shadow: 2px 2px 5px #000000;
   border-radius: 5px;
-  cursor: pointer;
-}
-.color-card-buttons {
-  display: flex;
-  position: relative;
-  right: 0px;
-  justify-items: flex-end;
-  align-items: flex-end;
-  align-content: flex-end;
-  align-self: flex-end;
-  flex-direction: column;
-  flex-wrap: wrap;
-  justify-content: flex-end;
-  width: 100%;
+  box-shadow: 2px 2px 5px #000000;
 }
 
+/* Specific styles for 'OK' button */
+.color-card-button-ok {
+  background-color: #52cc00;
+  color: white;
+  width: 100px;
+  font-size: 18px;
+  height: 50px;
+  border-radius: 5px;
+  box-shadow: 2px 2px 5px #000000;
+}
+
+/* Color circle for visual representation */
 .color-card-color {
   display: inline-block;
   width: 20px;
@@ -98,6 +70,8 @@
   border-radius: 50%;
   margin-right: 5px;
 }
+
+/* Highlighted color card style */
 .color-card-highlight {
   background-color: #ff0000;
   border: 3px solid #ff0000;
@@ -109,38 +83,47 @@
   padding: 5px;
   margin-top: 10px;
 }
+
+/* Content area styles */
 .color-card-content {
   display: flex;
   flex-direction: row;
   width: 100%;
 }
 
-.color-card-content h3 {
-  display: inline;
-}
+/* Styles for specific responses */
 .color-card-yup {
   background-color: rgb(0, 208, 0);
   color: #000;
   width: 300px;
 }
+
 .color-card-nope {
   background-color: rgb(204, 0, 0);
   color: #000;
   width: 300px;
 }
+
 .color-card-kinda {
   background-color: rgb(191, 205, 0);
   color: #000;
   width: 300px;
 }
-.button-edit {
-  position: relative;
-  background-color: #ffffff40;
-  right: 5px;
-}
+
+/* Button positions within the card */
+.button-edit,
 .button-delete {
   position: relative;
-  background-color: #ffffff40;
+  background-color: rgba(255, 255, 255, 0.25);
+}
+.button-delete {
   color: #cc0000;
+}
+
+.button-edit {
+  right: 5px;
+}
+
+.button-delete {
   right: 10px;
 }

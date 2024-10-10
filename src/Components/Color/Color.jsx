@@ -29,7 +29,6 @@ export default function Color({
       );
       //console.log(response);
       const data = await response.json();
-      console.log(data.contrast);
       setContrast(data.contrast);
       setContrastData(data.overall);
     }
@@ -47,7 +46,6 @@ export default function Color({
   const handleEdit = (id, data) => {
     if (activeTheme === "t1") return;
     onEditColor(id, data);
-    console.log(data);
   };
 
   return (
@@ -81,7 +79,7 @@ export default function Color({
       <p className="color-card-contrast">contrast: {color.contrastText}</p>
       <p className="color-card-contrast">contrast score: {contrast}</p>
       <p className={`color-card-${contrastData.toLowerCase()}`}>
-        Overall Contrast Score: {contrastData} {console.log(contrastData)}
+        Overall Contrast Score: {contrastData}
       </p>
 
       {editColor && (

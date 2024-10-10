@@ -1,18 +1,26 @@
+/* General button styles */
 button {
   align-self: flex-end;
-  background-color: #0077cc00;
+  background-color: rgba(
+    0,
+    119,
+    204,
+    0
+  ); /* Updated to standard rgba for clarity */
   color: rgb(0, 0, 0);
   box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.203);
   padding: 5px;
   border-radius: 5px;
   cursor: pointer;
-  border: none;
+  border: none; /* Ensure border is removed */
   margin: 5px;
 }
 
 button:hover {
-  background-color: #44444434;
+  background-color: rgba(68, 68, 68, 0.2); /* Specified rgba for hover state */
 }
+
+/* Theme manager layout */
 .theme-manager {
   display: flex;
   flex-direction: column;
@@ -20,43 +28,46 @@ button:hover {
   margin-top: 20px;
   width: 100%;
 }
-.add-button {
-  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.414);
-  align-self: flex-end;
-}
+
+/* Add theme form styles */
 .add-theme-form {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-top: 20px;
-  margin-right: 0;
-
-  position: relative;
   width: 100%;
 }
+
 .add-theme-form input {
   margin-bottom: 10px;
   padding: 5px;
   border-radius: 5px;
   width: 100%;
-  border: none;
+  border: none; /* Ensure a clean look */
   box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.203);
 }
+
+/* Label styles for form inputs */
 .add-theme-form label {
   margin-bottom: 5px;
 }
+
+/* Color input specific styles */
 .add-theme-form input[type="color"] {
   width: 50px;
-  min-height: 50px;
-  margin-right: 10px;
+  height: 50px; /* Use height instead of min-height for consistency */
   cursor: pointer;
-  block-size: 50px !important;
+  margin-right: 10px; /* Spacing for layout */
 }
+
+/* Button styles specific to add theme form */
 .add-theme-form button {
   margin-top: 10px;
 }
+
+/* Color display container */
 .colors {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 10px; /* Used gap for even spacing between items */
 }
