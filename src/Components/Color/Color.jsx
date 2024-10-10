@@ -62,13 +62,13 @@ export default function Color({
         <div className="color-card-button-group">
           <CopyButton color={color.hex} />
           <button
-            className="color-card-button button-delete"
+            className="color-card-button button-delete material-icons"
             onClick={() => handleDelete(color.id)}
           >
             <span className="material-icons">delete</span>
           </button>
           <button
-            className="color-card-button button-edit"
+            className="color-card-button button-edit material-icons"
             onClick={() => setEditColor(true)}
           >
             <span className="material-icons">edit</span>
