@@ -1,16 +1,18 @@
-import { initialColors } from "./lib/colors";
+/* import { initialColors } from "./lib/colors";
 import Color from "./Components/Color/Color";
 import ColorForm from "./Components/ColorForm/ColorForm";
-
-import { uid } from "uid";
-import "./App.css";
 import useLocalStorageState from "use-local-storage-state";
 
+import { uid } from "uid"; */
+import "./App.css";
+
+import ThemeManager from "./Components/ThemeManager/ThemeManager";
+
 function App() {
-  const [colors, setColors] = useLocalStorageState("colors", {
+  /* const [colors, setColors] = useLocalStorageState("colors", {
     defaultValue: initialColors,
-  });
-  const color = { role: "Color name", hex: "#ffffff", contrastText: "#000000" };
+  }); */
+  /* const color = { role: "Color name", hex: "#ffffff", contrastText: "#000000" };
 
   function handleAddColor(data) {
     setColors([{ id: uid(), ...data }, ...colors]);
@@ -32,13 +34,16 @@ function App() {
           : color
       )
     );
-  }
+  } */
 
   return (
     <main className="container">
       <div className="wrapper">
         <h1>Theme Creator</h1>
         <div>
+          <ThemeManager />
+        </div>
+        {/* <div>
           <ColorForm onAddColor={handleAddColor} color={color} />
         </div>
         <div>
@@ -53,7 +58,7 @@ function App() {
               />
             );
           })}
-        </div>
+        </div> */}
       </div>
     </main>
   );

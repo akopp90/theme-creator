@@ -1,5 +1,7 @@
 .color-card {
   margin: 0px 10px;
+  border: solid 1px #cfcfcf;
+  border-radius: 5px;
   padding: 5px;
   min-height: 30vh;
 }
@@ -10,15 +12,48 @@
   background: black;
   color: white;
 }
-
+.button-edit {
+  position: relative;
+  top: -100px;
+  right: 5px;
+}
+.button-delete {
+  position: relative;
+  top: -100px;
+  right: 5px;
+}
+.button-cancel-edit {
+  position: relative;
+  z-index: 1;
+  width: 100px;
+  right: calc(100% / -2 + 50px);
+}
+.color-card-delete {
+  position: relative;
+  display: flex;
+  align-self: center;
+  justify-self: center;
+  flex-direction: row;
+}
+.color-card-edit {
+  position: relative;
+  display: flex;
+  bottom: 0px;
+  align-self: center;
+}
+.color-card-button-group {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: flex-start;
+}
 .color-card-button {
   align-self: center;
   margin: 5px;
   height: 50px;
+  padding: 10px;
   font-size: 18px;
   font-weight: bold;
-  width: 30%;
-  min-width: 100px;
   background-color: #0077cc;
   color: white;
   border: none;
@@ -33,6 +68,17 @@
   height: 50px;
   font-weight: bold;
   background-color: #cc0000;
+  color: white;
+  box-shadow: 2px 2px 5px #000000;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.color-card-button-ok {
+  margin: 5px;
+  font-size: 18px;
+  height: 50px;
+  font-weight: bold;
+  background-color: #52cc00;
   color: white;
   box-shadow: 2px 2px 5px #000000;
   border-radius: 5px;
