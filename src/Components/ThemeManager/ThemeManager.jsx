@@ -108,106 +108,108 @@ function ThemeManager() {
   return (
     <>
       <div className="container wrapper">
-        <h1>Theme Creator</h1>
+        <div className="theme-manager-container">
+          <h1>Theme Creator</h1>
 
-        <div className="theme-manager">
-          <ThemeSwitcher
-            themes={themes}
-            activeTheme={activeTheme}
-            setActiveTheme={setActiveTheme}
-          />
-          <button
-            onClick={() => {
-              addThemeName ? setAddThemeName(false) : setAddThemeName(true);
-            }}
-          >
-            Add Theme
-          </button>
-          {addThemeName && (
-            <form
-              className="add-theme-form"
-              onSubmit={(e) => {
-                e.preventDefault();
-                addTheme({
-                  id: uid(),
-                  name: e.target.elements.name.value,
-                  colors: [],
-                });
-                setAddThemeName(false);
+          <div className="theme-manager">
+            <ThemeSwitcher
+              themes={themes}
+              activeTheme={activeTheme}
+              setActiveTheme={setActiveTheme}
+            />
+            <button
+              onClick={() => {
+                addThemeName ? setAddThemeName(false) : setAddThemeName(true);
               }}
             >
-              <label>Theme Name:</label>
-              <input type="text" name="name" />
-              <button className="add-button">Add</button>
-            </form>
-          )}
-          {currentTheme.id !== initialThemes[0].id && (
-            <button onClick={() => deleteTheme(currentTheme.id)}>
-              Delete Theme
+              Add Theme
             </button>
-          )}
-        </div>
-        <div>
-          {currentTheme && (
-            <div className="theme-details">
-              {/* Theme editing UI */}
-              <h2>{currentTheme.name}</h2>
-              <div className="theme-button-wrapper">
-                <button
-                  onClick={() => {
-                    addColor ? setAddColor(false) : setAddColor(true);
-                  }}
-                >
-                  Add Color
-                </button>
-                <button
-                  onClick={() => {
-                    themePrev ? setThemePrev(false) : setThemePrev(true);
-                  }}
-                >
-                  Preview
-                </button>
-                <button
-                  className="material-icons list-grid-toggle"
-                  onClick={handleToggleGridView}
-                >
-                  {!gridView && (
-                    <span className="material-icons" id="list-grid-toggle">
-                      grid_view
-                    </span>
-                  )}
-                  {gridView && (
-                    <span className="material-icons" id="list-grid-toggle">
-                      list
-                    </span>
-                  )}
-                </button>
-              </div>
-              {themePrev && <ThemePreview theme={currentTheme} />}
-              {addColor && (
-                <ColorForm
-                  onAddColor={handleAddColor}
-                  color={{
-                    role: "Color name",
-                    hex: "#ffffff",
-                    contrastText: "#000000",
-                  }}
-                />
-              )}
-              <div className="colors">
-                {currentTheme.colors.map((color) => (
-                  <Color
-                    key={color.id}
-                    color={color}
+            {addThemeName && (
+              <form
+                className="add-theme-form"
+                onSubmit={(e) => {
+                  e.preventDefault();
+                  addTheme({
+                    id: uid(),
+                    name: e.target.elements.name.value,
+                    colors: [],
+                  });
+                  setAddThemeName(false);
+                }}
+              >
+                <label>Theme Name:</label>
+                <input type="text" name="name" />
+                <button className="add-button">Add</button>
+              </form>
+            )}
+            {currentTheme.id !== initialThemes[0].id && (
+              <button onClick={() => deleteTheme(currentTheme.id)}>
+                Delete Theme
+              </button>
+            )}
+          </div>
+          <div>
+            {currentTheme && (
+              <div className="theme-details">
+                {/* Theme editing UI */}
+                <h2>{currentTheme.name}</h2>
+                <div className="theme-button-wrapper">
+                  <button
+                    onClick={() => {
+                      addColor ? setAddColor(false) : setAddColor(true);
+                    }}
+                  >
+                    Add Color
+                  </button>
+                  <button
+                    onClick={() => {
+                      themePrev ? setThemePrev(false) : setThemePrev(true);
+                    }}
+                  >
+                    Preview
+                  </button>
+                  <button
+                    className="material-icons list-grid-toggle"
+                    onClick={handleToggleGridView}
+                  >
+                    {!gridView && (
+                      <span className="material-icons" id="list-grid-toggle">
+                        grid_view
+                      </span>
+                    )}
+                    {gridView && (
+                      <span className="material-icons" id="list-grid-toggle">
+                        list
+                      </span>
+                    )}
+                  </button>
+                </div>
+                {themePrev && <ThemePreview theme={currentTheme} />}
+                {addColor && (
+                  <ColorForm
                     onAddColor={handleAddColor}
-                    onEditColor={handleEditColor}
-                    onDeleteColor={handleDeleteColor}
-                    activeTheme={activeTheme}
+                    color={{
+                      role: "Color name",
+                      hex: "#ffffff",
+                      contrastText: "#000000",
+                    }}
                   />
-                ))}
+                )}
+                <div className="colors">
+                  {currentTheme.colors.map((color) => (
+                    <Color
+                      key={color.id}
+                      color={color}
+                      onAddColor={handleAddColor}
+                      onEditColor={handleEditColor}
+                      onDeleteColor={handleDeleteColor}
+                      activeTheme={activeTheme}
+                    />
+                  ))}
+                </div>
               </div>
-            </div>
-          )}
+            )}
+          </div>
         </div>
       </div>
     </>

@@ -85,3 +85,6 @@ button:hover {
   width: 100%;
   gap: 10px; /* Used gap for even spacing between items */
 }
+.theme-manager-container {
+  margin-top: 50px;
+}
