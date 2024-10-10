@@ -130,11 +130,13 @@
 }
 .button-edit {
   position: relative;
+  background-color: #ffffff40;
   top: -40px;
   right: 5px;
 }
 .button-delete {
   position: relative;
+  background-color: #ffffff40;
   color: #cc0000;
   top: -40px;
   right: 10px;
