@@ -133,16 +133,18 @@ function ThemeManager() {
                 }}
               />
             )}
-            {currentTheme.colors.map((color) => (
-              <Color
-                key={color.id}
-                color={color}
-                onAddColor={handleAddColor}
-                onEditColor={handleEditColor}
-                onDeleteColor={handleDeleteColor}
-                activeTheme={activeTheme}
-              />
-            ))}
+            <div className="colors">
+              {currentTheme.colors.map((color) => (
+                <Color
+                  key={color.id}
+                  color={color}
+                  onAddColor={handleAddColor}
+                  onEditColor={handleEditColor}
+                  onDeleteColor={handleDeleteColor}
+                  activeTheme={activeTheme}
+                />
+              ))}
+            </div>
           </div>
         )}
       </div>

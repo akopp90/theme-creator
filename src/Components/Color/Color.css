@@ -4,6 +4,7 @@
   border-radius: 5px;
   padding: 5px;
   min-height: 30vh;
+  width: calc(100% / 3 - 30px);
 }
 
 .color-card-headline {
@@ -115,8 +116,6 @@
   flex-direction: row;
   justify-content: flex-start;
   align-items: flex-start;
-  height: 100%;
-  width: 100%;
 }
 
 .color-card-content h3 {
