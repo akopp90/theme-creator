@@ -5,6 +5,7 @@
   padding: 5px;
   min-height: 30vh;
   width: calc(100% / 3 - 10px);
+  box-shadow: 1px 1px 5px #a2a2a2;
 }
 
 .color-card-headline {
@@ -45,16 +46,14 @@
 .color-card-button {
   align-self: center;
   margin: 2px;
-  padding: 5px;
-  font-size: 15px;
+
   font-weight: bold;
-  background-color: #0077cc;
-  color: white;
+  color: rgb(0, 0, 0);
   border: none;
   border-radius: 5px;
   cursor: pointer;
 
-  box-shadow: 2px 2px 5px #000000;
+  box-shadow: 2px 2px 5px #00000049;
 }
 .color-card-button-cancel {
   margin: 5px;
@@ -131,12 +130,12 @@
 }
 .button-edit {
   position: relative;
-  top: -35px;
+  top: -40px;
   right: 5px;
 }
 .button-delete {
   position: relative;
-  background-color: #cc0000;
-  top: -35px;
-  right: 5px;
+  color: #cc0000;
+  top: -40px;
+  right: 10px;
 }

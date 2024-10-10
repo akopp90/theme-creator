@@ -1,8 +1,9 @@
 button {
   align-self: flex-end;
-  background-color: #0077cc;
-  color: white;
-  padding: 3px 5px;
+  background-color: #0077cc00;
+  color: rgb(0, 0, 0);
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.203);
+  padding: 5px;
   border-radius: 5px;
   cursor: pointer;
   border: none;
@@ -10,7 +11,7 @@ button {
 }
 
 button:hover {
-  background-color: #005fa3;
+  background-color: #44444434;
 }
 .theme-manager {
   display: flex;
@@ -20,7 +21,7 @@ button:hover {
   width: 100%;
 }
 .add-button {
-  background-color: #0077cc;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.414);
   align-self: flex-end;
 }
 .add-theme-form {
@@ -29,14 +30,17 @@ button:hover {
   align-items: center;
   margin-top: 20px;
   margin-right: 0;
-  right: -30px;
+
   position: relative;
+  width: 100%;
 }
 .add-theme-form input {
   margin-bottom: 10px;
   padding: 5px;
   border-radius: 5px;
-  width: 300px;
+  width: 100%;
+  border: none;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.203);
 }
 .add-theme-form label {
   margin-bottom: 5px;

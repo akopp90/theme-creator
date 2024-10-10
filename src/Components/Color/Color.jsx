@@ -67,13 +67,13 @@ export default function Color({
           className="color-card-button button-delete"
           onClick={() => handleDelete(color.id)}
         >
-          Delete
+          <span className="material-icons">delete</span>
         </button>
         <button
           className="color-card-button button-edit"
           onClick={() => setEditColor(true)}
         >
-          Edit
+          <span className="material-icons">edit</span>
         </button>
       </div>
       <h4>{color.role}</h4>
