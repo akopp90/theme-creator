@@ -13,14 +13,17 @@
   background: black;
   color: white;
 }
+.color-card-contrast {
+  font-weight: 600;
+}
 .button-edit {
   position: relative;
-  top: -100px;
+  top: -115px;
   right: 5px;
 }
 .button-delete {
   position: relative;
-  top: -100px;
+  top: -115px;
   right: 5px;
 }
 .button-cancel-edit {
@@ -50,10 +53,9 @@
 }
 .color-card-button {
   align-self: center;
-  margin: 5px;
-  height: 50px;
-  padding: 10px;
-  font-size: 18px;
+  margin: 2px;
+  padding: 5px;
+  font-size: 15px;
   font-weight: bold;
   background-color: #0077cc;
   color: white;

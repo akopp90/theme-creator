@@ -12,6 +12,7 @@ export default function Color({
   const [confirmDelete, setConfirmDelete] = useState(false);
   const [editColor, setEditColor] = useState(false);
   const [contrastData, setContrastData] = useState("");
+  const [contrast, setContrast] = useState("");
 
   useEffect(() => {
     async function fetchContrast() {
@@ -28,7 +29,8 @@ export default function Color({
       );
       //console.log(response);
       const data = await response.json();
-      //console.log(data.overall);
+      console.log(data.contrast);
+      setContrast(data.contrast);
       setContrastData(data.overall);
     }
     fetchContrast();
@@ -61,9 +63,9 @@ export default function Color({
         <CopyButton color={color.hex} />
       </div>
       <h4>{color.role}</h4>
-      <p>contrast: {color.contrastText}</p>
+      <p className="color-card-contrast">contrast: {contrast}</p>
       <p className={`color-card-${contrastData.toLowerCase()}`}>
-        Overall Contrast Score: {contrastData}
+        Overall Contrast Score: {contrastData} {console.log(contrastData)}
       </p>
 
       <div className="color-card-button-group">
