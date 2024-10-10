@@ -69,16 +69,12 @@ export default function Color({
           </button>
           <button
             className="color-card-button button-edit material-icons"
-<<<<<<< HEAD
-            onClick={() => setEditColor(true)}
-=======
             onClick={(e) =>
               editColor
                 ? (setEditColor(false),
                   e.target.classList.remove("edit-active"))
                 : (setEditColor(true), e.target.classList.add("edit-active"))
             }
->>>>>>> refs/remotes/origin/main
           >
             <span className="material-icons">edit</span>
           </button>
