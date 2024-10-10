@@ -16,16 +16,7 @@
 .color-card-contrast {
   font-weight: 600;
 }
-.button-edit {
-  position: relative;
-  top: -115px;
-  right: 5px;
-}
-.button-delete {
-  position: relative;
-  top: -115px;
-  right: 5px;
-}
+
 .button-cancel-edit {
   position: relative;
   z-index: 1;
@@ -137,4 +128,15 @@
   background-color: rgb(191, 205, 0);
   color: #000;
   width: 300px;
+}
+.button-edit {
+  position: relative;
+  top: -35px;
+  right: 5px;
+}
+.button-delete {
+  position: relative;
+  background-color: #cc0000;
+  top: -35px;
+  right: 5px;
 }

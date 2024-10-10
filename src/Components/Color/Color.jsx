@@ -62,12 +62,6 @@ export default function Color({
         <h3 className="color-card-headline">{color.hex}</h3>
         <CopyButton color={color.hex} />
       </div>
-      <h4>{color.role}</h4>
-      <p className="color-card-contrast">contrast: {contrast}</p>
-      <p className={`color-card-${contrastData.toLowerCase()}`}>
-        Overall Contrast Score: {contrastData} {console.log(contrastData)}
-      </p>
-
       <div className="color-card-button-group">
         <button
           className="color-card-button button-delete"
@@ -82,6 +76,13 @@ export default function Color({
           Edit
         </button>
       </div>
+      <h4>{color.role}</h4>
+      <p className="color-card-contrast">contrast: {color.contrastText}</p>
+      <p className="color-card-contrast">contrast score: {contrast}</p>
+      <p className={`color-card-${contrastData.toLowerCase()}`}>
+        Overall Contrast Score: {contrastData} {console.log(contrastData)}
+      </p>
+
       {editColor && (
         <>
           <ColorForm color={color} onEditColor={handleEdit} />
