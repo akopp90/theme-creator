@@ -71,3 +71,17 @@ button:hover {
   flex-wrap: wrap;
   gap: 10px; /* Used gap for even spacing between items */
 }
+.list-grid-toggle {
+  position: relative;
+  align-self: flex-end;
+}
+.theme-details {
+  flex-direction: row;
+  width: 100%;
+}
+.theme-button-wrapper {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  gap: 10px; /* Used gap for even spacing between items */
+}

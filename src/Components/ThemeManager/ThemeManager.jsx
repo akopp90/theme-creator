@@ -149,35 +149,40 @@ function ThemeManager() {
         </div>
         <div>
           {currentTheme && (
-            <div>
+            <div className="theme-details">
               {/* Theme editing UI */}
               <h2>{currentTheme.name}</h2>
-              <button
-                onClick={() => {
-                  addColor ? setAddColor(false) : setAddColor(true);
-                }}
-              >
-                Add Color
-              </button>
-              <button
-                onClick={() => {
-                  themePrev ? setThemePrev(false) : setThemePrev(true);
-                }}
-              >
-                Preview
-              </button>
-              <button onClick={handleToggleGridView}>
-                {!gridView && (
-                  <span className="material-icons" id="list-grid-toggle">
-                    list
-                  </span>
-                )}
-                {gridView && (
-                  <span className="material-icons" id="list-grid-toggle">
-                    grid_view
-                  </span>
-                )}
-              </button>
+              <div className="theme-button-wrapper">
+                <button
+                  onClick={() => {
+                    addColor ? setAddColor(false) : setAddColor(true);
+                  }}
+                >
+                  Add Color
+                </button>
+                <button
+                  onClick={() => {
+                    themePrev ? setThemePrev(false) : setThemePrev(true);
+                  }}
+                >
+                  Preview
+                </button>
+                <button
+                  className="material-icons list-grid-toggle"
+                  onClick={handleToggleGridView}
+                >
+                  {!gridView && (
+                    <span className="material-icons" id="list-grid-toggle">
+                      list
+                    </span>
+                  )}
+                  {gridView && (
+                    <span className="material-icons" id="list-grid-toggle">
+                      grid_view
+                    </span>
+                  )}
+                </button>
+              </div>
               {themePrev && <ThemePreview theme={currentTheme} />}
               {addColor && (
                 <ColorForm
