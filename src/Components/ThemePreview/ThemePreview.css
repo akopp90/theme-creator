@@ -32,11 +32,12 @@
   flex-wrap: wrap;
   justify-content: center;
   gap: 1em;
+  width: 100%;
 }
 
 .color-box {
   padding: 1em;
-  width: calc(100vw / 2 - 5em);
+  width: calc(100% / 2 - 2em);
   height: 200px;
   border-radius: 4px;
   text-align: center;
