@@ -33,7 +33,10 @@ const CopyButton = ({ color }) => {
       <span className="color-card-copy-button-text">
         {buttonText ? "" : "Copied to clipboard"}
       </span>
-      <button className="color-card-copy-button" onClick={handleClick}>
+      <button
+        className="color-card-copy-button material-icons"
+        onClick={handleClick}
+      >
         <span className="material-icons">copy_all</span>
       </button>
     </>

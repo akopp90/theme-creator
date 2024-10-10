@@ -16,6 +16,7 @@ function ThemeManager() {
   const [addColor, setAddColor] = useState(false);
   const [addThemeName, setAddThemeName] = useState(false);
   const [themePrev, setThemePrev] = useState(false);
+  const [gridView, setGridView] = useState(true);
 
   const [activeTheme, setActiveTheme] = useLocalStorageState("activeTheme", {
     defaultValue: initialThemes[0].id,
@@ -64,6 +65,36 @@ function ThemeManager() {
           : theme
       )
     );
+  }
+  function handleToggleGridView() {
+    setGridView(!gridView);
+    if (gridView) {
+      for (
+        let i = 0;
+        i < document.getElementsByClassName("color-card").length;
+        i++
+      ) {
+        document
+          .getElementsByClassName("color-card")
+          [i].classList.remove("grid-view");
+        document
+          .getElementsByClassName("color-card")
+          [i].classList.add("list-view");
+      }
+    } else {
+      for (
+        let i = 0;
+        i < document.getElementsByClassName("color-card").length;
+        i++
+      ) {
+        document
+          .getElementsByClassName("color-card")
+          [i].classList.add("grid-view");
+        document
+          .getElementsByClassName("color-card")
+          [i].classList.remove("list-view");
+      }
+    }
   }
 
   const deleteTheme = (id) => {
@@ -134,6 +165,18 @@ function ThemeManager() {
                 }}
               >
                 Preview
+              </button>
+              <button onClick={handleToggleGridView}>
+                {!gridView && (
+                  <span className="material-icons" id="list-grid-toggle">
+                    list
+                  </span>
+                )}
+                {gridView && (
+                  <span className="material-icons" id="list-grid-toggle">
+                    grid_view
+                  </span>
+                )}
               </button>
               {themePrev && <ThemePreview theme={currentTheme} />}
               {addColor && (

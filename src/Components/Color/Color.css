@@ -2,12 +2,20 @@
 .color-card {
   margin: 0;
   padding: 5px;
-  min-height: 30vh; /* Set minimum height for color card */
-  width: calc(33.33% - 10px); /* Adjust width for a 3-column layout */
+  /* Set minimum height for color card */
+
   min-width: 350px; /* Set minimum width for color card */
   border: solid 1px #cfcfcf;
   border-radius: 5px;
   box-shadow: 1px 1px 5px #a2a2a2;
+}
+.grid-view {
+  width: calc(33.33% - 10px); /* Adjust width for a 3-column layout */
+  min-height: 30vh;
+}
+.list-view {
+  width: 100%;
+  max-height: 200px !important;
 }
 
 /* Header styles for color card */
@@ -42,14 +50,20 @@
 }
 
 /* Specific button styles for cancel and confirm actions */
-.color-card-button-cancel {
+
+.color-card-button-cancel-delete {
   background-color: #cc0000;
+
+  z-index: 3;
   color: white;
   width: 100px;
   font-size: 18px;
   height: 50px;
   border-radius: 5px;
   box-shadow: 2px 2px 5px #000000;
+}
+.edit-active {
+  background-color: #00000072;
 }
 
 /* Specific styles for 'OK' button */
