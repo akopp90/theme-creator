@@ -1,8 +1,16 @@
 .color-card-copy-button {
-  align-self: flex-end;
+  position: relative;
   background-color: #ffffff40;
   color: rgb(0, 0, 0);
   padding: 3px;
-  border-radius: 5px;
+  right: 10px;
   cursor: pointer;
+}
+.color-card-copy-button-text {
+  position: relative;
+  top: -10px;
+  font-size: 12px;
+  font-weight: bold;
+  margin-right: 10px;
+  background-color: rgba(0, 0, 0, 0.252);
 }

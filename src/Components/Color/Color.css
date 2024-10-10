@@ -41,16 +41,16 @@
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
-  align-items: flex-start;
+  align-items: flex-end;
+  width: 100%;
 }
 .color-card-button {
-  align-self: center;
   margin: 2px;
 
   font-weight: bold;
   color: rgb(0, 0, 0);
   border: none;
-  border-radius: 5px;
+
   cursor: pointer;
 
   box-shadow: 2px 2px 5px #00000049;
@@ -79,10 +79,16 @@
 }
 .color-card-buttons {
   display: flex;
+  position: relative;
+  right: 0px;
+  justify-items: flex-end;
+  align-items: flex-end;
+  align-content: flex-end;
+  align-self: flex-end;
   flex-direction: column;
   flex-wrap: wrap;
   justify-content: flex-end;
-  height: 100%;
+  width: 100%;
 }
 
 .color-card-color {
@@ -106,8 +112,7 @@
 .color-card-content {
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
-  align-items: flex-start;
+  width: 100%;
 }
 
 .color-card-content h3 {
@@ -131,13 +136,11 @@
 .button-edit {
   position: relative;
   background-color: #ffffff40;
-  top: -40px;
   right: 5px;
 }
 .button-delete {
   position: relative;
   background-color: #ffffff40;
   color: #cc0000;
-  top: -40px;
   right: 10px;
 }

@@ -60,21 +60,22 @@ export default function Color({
     >
       <div className="color-card-content">
         <h3 className="color-card-headline">{color.hex}</h3>
-        <CopyButton color={color.hex} />
-      </div>
-      <div className="color-card-button-group">
-        <button
-          className="color-card-button button-delete"
-          onClick={() => handleDelete(color.id)}
-        >
-          <span className="material-icons">delete</span>
-        </button>
-        <button
-          className="color-card-button button-edit"
-          onClick={() => setEditColor(true)}
-        >
-          <span className="material-icons">edit</span>
-        </button>
+
+        <div className="color-card-button-group">
+          <CopyButton color={color.hex} />
+          <button
+            className="color-card-button button-delete"
+            onClick={() => handleDelete(color.id)}
+          >
+            <span className="material-icons">delete</span>
+          </button>
+          <button
+            className="color-card-button button-edit"
+            onClick={() => setEditColor(true)}
+          >
+            <span className="material-icons">edit</span>
+          </button>
+        </div>
       </div>
       <h4>{color.role}</h4>
       <p className="color-card-contrast">contrast: {color.contrastText}</p>
