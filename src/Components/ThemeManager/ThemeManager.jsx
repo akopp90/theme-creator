@@ -173,12 +173,12 @@ function ThemeManager() {
                 >
                   {!gridView && (
                     <span className="material-icons" id="list-grid-toggle">
-                      list
+                      grid_view
                     </span>
                   )}
                   {gridView && (
                     <span className="material-icons" id="list-grid-toggle">
-                      grid_view
+                      list
                     </span>
                   )}
                 </button>
