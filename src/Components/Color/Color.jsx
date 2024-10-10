@@ -50,7 +50,7 @@ export default function Color({
 
   return (
     <div
-      className="color-card"
+      className="color-card grid-view"
       style={{
         background: color.hex,
         color: color.contrastText,
@@ -69,7 +69,16 @@ export default function Color({
           </button>
           <button
             className="color-card-button button-edit material-icons"
+<<<<<<< HEAD
             onClick={() => setEditColor(true)}
+=======
+            onClick={(e) =>
+              editColor
+                ? (setEditColor(false),
+                  e.target.classList.remove("edit-active"))
+                : (setEditColor(true), e.target.classList.add("edit-active"))
+            }
+>>>>>>> refs/remotes/origin/main
           >
             <span className="material-icons">edit</span>
           </button>
@@ -85,13 +94,6 @@ export default function Color({
       {editColor && (
         <>
           <ColorForm color={color} onEditColor={handleEdit} />
-          <button
-            type="button"
-            className="color-card-button-cancel button-cancel-edit"
-            onClick={() => setEditColor(false)}
-          >
-            Cancel
-          </button>
         </>
       )}
       {confirmDelete && (
@@ -106,7 +108,7 @@ export default function Color({
           </button>
           <button
             type="button"
-            className="color-card-button-cancel"
+            className="color-card-button-cancel-delete"
             onClick={() => setConfirmDelete(false)}
           >
             Cancel
