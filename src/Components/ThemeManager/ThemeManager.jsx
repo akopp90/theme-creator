@@ -6,6 +6,7 @@ import Color from "../Color/Color";
 import { uid } from "uid";
 import ColorForm from "../ColorForm/ColorForm";
 import "./ThemeManager.css";
+import ThemePreview from "../ThemePreview/ThemePreview";
 
 function ThemeManager() {
   const [themes, setThemes] = useLocalStorageState("themes", {
@@ -14,6 +15,7 @@ function ThemeManager() {
 
   const [addColor, setAddColor] = useState(false);
   const [addThemeName, setAddThemeName] = useState(false);
+  const [themePrev, setThemePrev] = useState(false);
 
   const [activeTheme, setActiveTheme] = useLocalStorageState("activeTheme", {
     defaultValue: initialThemes[0].id,
@@ -123,6 +125,14 @@ function ThemeManager() {
             >
               Add Color
             </button>
+            <button
+              onClick={() => {
+                themePrev ? setThemePrev(false) : setThemePrev(true);
+              }}
+            >
+              Preview
+            </button>
+            {themePrev && <ThemePreview theme={currentTheme} />}
             {addColor && (
               <ColorForm
                 onAddColor={handleAddColor}
