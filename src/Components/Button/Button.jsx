@@ -1,12 +1,14 @@
 import "./Button.css";
 
-const Button = () => {
+const Button = ({ children, thisStyle }) => {
+  console.log(thisStyle);
   return (
     <button
-      className="cta-button"
       onClick={() => (window.location.href = "/theme-manager")}
+      style={{ thisStyle }}
+      className="cta-button"
     >
-      Get Started!
+      {children}
     </button>
   );
 };
