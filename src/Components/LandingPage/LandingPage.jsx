@@ -1,166 +1,51 @@
 import React from "react";
 import { Palette, Wand2, Droplet, Share2, ChevronRight } from "lucide-react";
 import Button from "../Button/Button";
-
-const buttonStyle = {
-  padding: "10px 20px",
-  fontSize: "16px",
-  fontWeight: "bold",
-  border: "none",
-  borderRadius: "5px",
-  cursor: "pointer",
-  display: "inline-flex",
-  alignItems: "center",
-  justifyContent: "center",
-};
-
-const primaryButtonStyle = {
-  ...buttonStyle,
-  backgroundColor: "#3490dc",
-  color: "white",
-};
-
-const secondaryButtonStyle = {
-  ...buttonStyle,
-  backgroundColor: "white",
-  color: "#3490dc",
-  border: "2px solid #3490dc",
-};
+import "./LandingPage.css";
 
 export default function LandingPage() {
   return (
-    <div
-      style={{ display: "flex", flexDirection: "column", minHeight: "100vh" }}
-    >
-      <header
-        style={{
-          padding: "0 20px",
-          height: "64px",
-          display: "flex",
-          alignItems: "center",
-          borderBottom: "1px solid #e2e8f0",
-        }}
-      >
-        <a
-          href="/"
-          style={{
-            display: "flex",
-            alignItems: "center",
-            textDecoration: "none",
-            color: "#3490dc",
-          }}
-        >
-          <Palette style={{ height: "24px", width: "24px" }} />
-          <span
-            style={{ marginLeft: "8px", fontSize: "24px", fontWeight: "bold" }}
-          >
-            ThemeCreator
-          </span>
+    <div className="landing-page-container">
+      <header className="header">
+        <a href="/" className="logo-link">
+          <Palette className="logo-icon" />
+          <span className="logo-text">ThemeCreator</span>
         </a>
-        <nav style={{ marginLeft: "auto", display: "flex", gap: "24px" }}>
-          <a
-            href="#features"
-            style={{
-              fontSize: "14px",
-              textDecoration: "none",
-              color: "#4a5568",
-            }}
-          >
+        <nav className="nav">
+          <a href="#features" className="nav-link">
             Features
           </a>
-          <a
-            href="#how-it-works"
-            style={{
-              fontSize: "14px",
-              textDecoration: "none",
-              color: "#4a5568",
-            }}
-          >
+          <a href="#how-it-works" className="nav-link">
             How It Works
           </a>
-
-          <a
-            href="https://theme-creator-nine.vercel.app/"
-            style={{
-              fontSize: "14px",
-              textDecoration: "none",
-              color: "#4a5568",
-            }}
-          >
+          <a href="https://theme-creator-nine.vercel.app/" className="nav-link">
             Get Started
           </a>
         </nav>
       </header>
-      <main style={{ flex: 1 }}>
-        <section
-          style={{
-            padding: "48px 0",
-            background: "linear-gradient(to bottom, white, #f7fafc)",
-          }}
-        >
-          <div
-            style={{
-              maxWidth: "1200px",
-              margin: "0 auto",
-              padding: "0 20px",
-              textAlign: "center",
-            }}
-          >
-            <h1
-              style={{
-                fontSize: "48px",
-                fontWeight: "bold",
-                marginBottom: "16px",
-              }}
-            >
+      <main>
+        <section className="hero-section">
+          <div className="hero-content">
+            <h1 className="hero-title">
               Create Stunning Color Themes in Seconds
             </h1>
-            <p
-              style={{
-                fontSize: "18px",
-                color: "#4a5568",
-                maxWidth: "700px",
-                margin: "0 auto 24px",
-              }}
-            >
+            <p className="hero-description">
               Effortlessly design beautiful color palettes for your projects.
               Our intuitive tool helps you craft harmonious color schemes with
               ease.
             </p>
-            <div>
-              <Button thistyle={primaryButtonStyle}>Get Started</Button>
+            <div className="hero-buttons">
+              <Button className="button primary-button">Get Started</Button>
               <a href="#how-it-works">
-                <button style={{ ...secondaryButtonStyle, marginLeft: "16px" }}>
-                  Learn More
-                </button>
+                <button className="button secondary-button">Learn More</button>
               </a>
             </div>
           </div>
         </section>
-        <section
-          id="features"
-          style={{ padding: "48px 0", backgroundColor: "white" }}
-        >
-          <div
-            style={{ maxWidth: "1200px", margin: "0 auto", padding: "0 20px" }}
-          >
-            <h2
-              style={{
-                fontSize: "36px",
-                fontWeight: "bold",
-                textAlign: "center",
-                marginBottom: "48px",
-              }}
-            >
-              Powerful Features
-            </h2>
-            <div
-              style={{
-                display: "grid",
-                gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))",
-                gap: "40px",
-              }}
-            >
+        <section id="features" className="features-section">
+          <div className="section-content">
+            <h2 className="section-title">Powerful Features</h2>
+            <div className="features-grid">
               {[
                 {
                   icon: Wand2,
@@ -181,67 +66,19 @@ export default function LandingPage() {
                     "Export your themes in various formats and share them with your team effortlessly.",
                 },
               ].map((feature, index) => (
-                <div
-                  key={index}
-                  style={{
-                    display: "flex",
-                    flexDirection: "column",
-                    alignItems: "center",
-                    textAlign: "center",
-                    padding: "24px",
-                    border: "1px solid #e2e8f0",
-                    borderRadius: "8px",
-                  }}
-                >
-                  <feature.icon
-                    style={{
-                      height: "48px",
-                      width: "48px",
-                      color: "#3490dc",
-                      marginBottom: "16px",
-                    }}
-                  />
-                  <h3
-                    style={{
-                      fontSize: "20px",
-                      fontWeight: "bold",
-                      marginBottom: "8px",
-                    }}
-                  >
-                    {feature.title}
-                  </h3>
-                  <p style={{ fontSize: "14px", color: "#4a5568" }}>
-                    {feature.description}
-                  </p>
+                <div key={index} className="feature-card">
+                  <feature.icon className="feature-icon" />
+                  <h3 className="feature-title">{feature.title}</h3>
+                  <p className="feature-description">{feature.description}</p>
                 </div>
               ))}
             </div>
           </div>
         </section>
-        <section
-          id="how-it-works"
-          style={{ padding: "48px 0", backgroundColor: "#f7fafc" }}
-        >
-          <div
-            style={{ maxWidth: "1200px", margin: "0 auto", padding: "0 20px" }}
-          >
-            <h2
-              style={{
-                fontSize: "36px",
-                fontWeight: "bold",
-                textAlign: "center",
-                marginBottom: "48px",
-              }}
-            >
-              How It Works
-            </h2>
-            <div
-              style={{
-                display: "grid",
-                gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))",
-                gap: "40px",
-              }}
-            >
+        <section id="how-it-works" className="how-it-works-section">
+          <div className="section-content">
+            <h2 className="section-title">How It Works</h2>
+            <div className="steps-grid">
               {[
                 {
                   step: 1,
@@ -262,90 +99,26 @@ export default function LandingPage() {
                     "Download your theme in various formats or copy the code to use in your projects.",
                 },
               ].map((step, index) => (
-                <div
-                  key={index}
-                  style={{
-                    display: "flex",
-                    flexDirection: "column",
-                    alignItems: "center",
-                    textAlign: "center",
-                    padding: "24px",
-                    backgroundColor: "white",
-                    border: "1px solid #e2e8f0",
-                    borderRadius: "8px",
-                  }}
-                >
-                  <div
-                    style={{
-                      backgroundColor: "#3490dc",
-                      color: "white",
-                      width: "32px",
-                      height: "32px",
-                      borderRadius: "50%",
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      fontSize: "18px",
-                      fontWeight: "bold",
-                      marginBottom: "16px",
-                    }}
-                  >
-                    {step.step}
-                  </div>
-                  <h3
-                    style={{
-                      fontSize: "20px",
-                      fontWeight: "bold",
-                      marginBottom: "8px",
-                    }}
-                  >
-                    {step.title}
-                  </h3>
-                  <p style={{ fontSize: "14px", color: "#4a5568" }}>
-                    {step.description}
-                  </p>
+                <div key={index} className="step-card">
+                  <div className="step-number">{step.step}</div>
+                  <h3 className="step-title">{step.title}</h3>
+                  <p className="step-description">{step.description}</p>
                 </div>
               ))}
             </div>
           </div>
         </section>
-        <section
-          style={{
-            padding: "48px 0",
-            backgroundColor: "#3490dc",
-            color: "white",
-          }}
-        >
-          <div
-            style={{
-              maxWidth: "1200px",
-              margin: "0 auto",
-              padding: "0 20px",
-              textAlign: "center",
-            }}
-          >
-            <h2
-              style={{
-                fontSize: "36px",
-                fontWeight: "bold",
-                marginBottom: "16px",
-              }}
-            >
+        <section className="cta-section">
+          <div className="cta-content">
+            <h2 className="cta-title">
               Ready to Create Your Perfect Color Theme?
             </h2>
-            <p
-              style={{
-                fontSize: "18px",
-                maxWidth: "600px",
-                margin: "0 auto 24px",
-                opacity: 0.8,
-              }}
-            >
+            <p className="cta-description">
               Join thousands of designers and developers who are creating
               stunning color schemes with ThemeCreator.
             </p>
             <Button
-              thisStyle={secondaryButtonStyle}
+              className="button secondary-button"
               onClick={() => (window.location.href = "/theme-manager")}
             >
               Get Started
@@ -353,38 +126,13 @@ export default function LandingPage() {
           </div>
         </section>
       </main>
-      <footer
-        style={{
-          padding: "24px",
-          borderTop: "1px solid #e2e8f0",
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          gap: "8px",
-        }}
-      >
-        <p style={{ fontSize: "12px", color: "#4a5568" }}>
-          © 2024 ThemeCreator. All rights reserved.
-        </p>
-        <nav style={{ display: "flex", gap: "16px" }}>
-          <a
-            href="#"
-            style={{
-              fontSize: "12px",
-              color: "#4a5568",
-              textDecoration: "none",
-            }}
-          >
+      <footer className="footer">
+        <p className="copyright">© 2024 ThemeCreator. All rights reserved.</p>
+        <nav className="footer-nav">
+          <a href="#" className="footer-link">
             Terms of Service
           </a>
-          <a
-            href="#"
-            style={{
-              fontSize: "12px",
-              color: "#4a5568",
-              textDecoration: "none",
-            }}
-          >
+          <a href="#" className="footer-link">
             Privacy
           </a>
         </nav>
