@@ -7,6 +7,8 @@ import { uid } from "uid";
 import ColorForm from "../ColorForm/ColorForm";
 import "./ThemeManager.css";
 import ThemePreview from "../ThemePreview/ThemePreview";
+import Header from "../Header/Header";
+import Footer from "../Footer/Footer";
 
 function ThemeManager() {
   const [themes, setThemes] = useLocalStorageState("themes", {
@@ -107,6 +109,7 @@ function ThemeManager() {
 
   return (
     <>
+      <Header />
       <div className="container wrapper">
         <div className="theme-manager-container">
           <h1>Theme Creator</h1>
@@ -212,6 +215,7 @@ function ThemeManager() {
           </div>
         </div>
       </div>
+      <Footer />
     </>
   );
 }

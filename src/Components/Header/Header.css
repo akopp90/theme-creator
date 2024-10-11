@@ -1,0 +1,32 @@
+.header {
+  padding: 0 20px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.logo-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #3490dc;
+}
+
+.logo-text {
+  margin-left: 8px;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.nav {
+  margin-left: auto;
+  display: flex;
+  gap: 24px;
+}
+
+.nav-link {
+  font-size: 14px;
+  text-decoration: none;
+  color: #4a5568;
+}
