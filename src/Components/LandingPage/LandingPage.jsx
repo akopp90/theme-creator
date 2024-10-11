@@ -2,27 +2,13 @@ import React from "react";
 import { Palette, Wand2, Droplet, Share2, ChevronRight } from "lucide-react";
 import Button from "../Button/Button";
 import "./LandingPage.css";
+import Header from "../Header/Header";
+import Footer from "../Footer/Footer";
 
 export default function LandingPage() {
   return (
     <div className="landing-page-container">
-      <header className="header">
-        <a href="/" className="logo-link">
-          <Palette className="logo-icon" />
-          <span className="logo-text">ThemeCreator</span>
-        </a>
-        <nav className="nav">
-          <a href="#features" className="nav-link">
-            Features
-          </a>
-          <a href="#how-it-works" className="nav-link">
-            How It Works
-          </a>
-          <a href="https://theme-creator-nine.vercel.app/" className="nav-link">
-            Get Started
-          </a>
-        </nav>
-      </header>
+      <Header />
       <main>
         <section className="hero-section">
           <div className="hero-content">
@@ -126,27 +112,7 @@ export default function LandingPage() {
           </div>
         </section>
       </main>
-      <footer className="footer">
-        <p className="copyright">
-          © 2024{" "}
-          <a
-            href="https://kopp-andreas.de"
-            target="_blank"
-            className="footer-link"
-          >
-            Andreas Kopp
-          </a>
-          . All rights reserved.
-        </p>
-        <nav className="footer-nav">
-          <a href="#" className="footer-link">
-            Terms of Service
-          </a>
-          <a href="#" className="footer-link">
-            Privacy
-          </a>
-        </nav>
-      </footer>
+      <Footer />
     </div>
   );
 }
