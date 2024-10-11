@@ -198,7 +198,7 @@ function ThemeManager() {
                   </button>
                 </div>
                 {cssPrev && <CssPreview theme={currentTheme} />}
-                {themePrev && <CssPreview theme={currentTheme} />}
+                {themePrev && <ThemePreview theme={currentTheme} />}
                 {addColor && (
                   <ColorForm
                     onAddColor={handleAddColor}
