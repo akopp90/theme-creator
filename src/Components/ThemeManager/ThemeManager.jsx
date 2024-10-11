@@ -19,6 +19,7 @@ function ThemeManager() {
   const [addThemeName, setAddThemeName] = useState(false);
   const [themePrev, setThemePrev] = useState(false);
   const [gridView, setGridView] = useState(true);
+  const [cssPrev, setCssPrev] = useState(false);
 
   const [activeTheme, setActiveTheme] = useLocalStorageState("activeTheme", {
     defaultValue: initialThemes[0].id,
@@ -172,6 +173,14 @@ function ThemeManager() {
                     Preview
                   </button>
                   <button
+                    className="material-icons"
+                    onClick={() => {
+                      cssPrev ? setThemePrev(false) : setThemePrev(true);
+                    }}
+                  >
+                    code
+                  </button>
+                  <button
                     className="material-icons list-grid-toggle"
                     onClick={handleToggleGridView}
                   >
@@ -187,7 +196,8 @@ function ThemeManager() {
                     )}
                   </button>
                 </div>
-                {themePrev && <ThemePreview theme={currentTheme} />}
+                {cssPrev && <CssPreview theme={currentTheme} />}
+                {themePrev && <CssPreview theme={currentTheme} />}
                 {addColor && (
                   <ColorForm
                     onAddColor={handleAddColor}
