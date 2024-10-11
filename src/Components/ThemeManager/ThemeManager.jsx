@@ -9,6 +9,7 @@ import "./ThemeManager.css";
 import ThemePreview from "../ThemePreview/ThemePreview";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
+import CssPreview from "../CssPreview/CssPreview";
 
 function ThemeManager() {
   const [themes, setThemes] = useLocalStorageState("themes", {
@@ -175,7 +176,7 @@ function ThemeManager() {
                   <button
                     className="material-icons"
                     onClick={() => {
-                      cssPrev ? setThemePrev(false) : setThemePrev(true);
+                      cssPrev ? setCssPrev(false) : setCssPrev(true);
                     }}
                   >
                     code
